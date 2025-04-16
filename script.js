@@ -8,12 +8,11 @@ function loadImageList() {
     xhr.open("GET", "images.txt", true);
     xhr.onload = function () {
         if (xhr.status === 200) {
-            console.log("images.txt loaded.");
             const lines = xhr.responseText.trim().split("\n");
             imageList = lines.map(line => {
                 const [file, duration] = line.trim().split(",");
                 return {
-                    file: "images/" + file.trim(),
+                    file: file.trim(), // No folder prefix
                     duration: parseInt(duration.trim())
                 };
             });
@@ -26,7 +25,7 @@ function loadImageList() {
                 console.error("Image list is empty.");
             }
         } else {
-            console.error("Error loading images.txt", xhr.status);
+            console.error("Failed to load images.txt", xhr.status);
         }
     };
     xhr.onerror = function () {
@@ -72,5 +71,5 @@ $(document).ready(function () {
     $("#prev").click(showPrevious);
     $("#update").click(loadImageList);
 
-    loadImageList(); // load at start
+    loadImageList(); // Initial load
 });
