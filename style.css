@@ -1,0 +1,64 @@
+/* style.css */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f8f8;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#gallery-container {
+    width: 80%;
+    max-width: 700px;
+    height: 450px;
+    margin-top: 50px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#gallery-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: none; /* shown via JS fadeIn */
+    transition: transform 0.5s ease-in-out;
+}
+
+#controls {
+    margin-top: 25px;
+}
+
+#controls button {
+    padding: 12px 25px;
+    margin: 0 10px;
+    background-color: #ff914d;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#controls button:hover {
+    background-color: #e27d3f;
+}
+
+@media (max-width: 768px) {
+    #gallery-container {
+        height: 300px;
+    }
+
+    #controls button {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+}

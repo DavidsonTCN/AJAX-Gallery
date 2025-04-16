@@ -1,0 +1,6 @@
+image1.jpg,3000
+image2.jpg,4000
+image3.jpg,2500
+image4.jpg,3500
+image5.jpg,4500
+
